@@ -1,1 +1,30 @@
 **************************Welcome in Address Book Database*******************************
+
+UC1 // Created a database of Address Book service
+
+mysql> CREATE DATABASE address_book_service; 		# It is use to create a database.
+Query OK, 1 row affected (0.54 sec)
+
+mysql> show databases;					# It is use to show to list of database.
++----------------------+
+| Database             |
++----------------------+
+| address_book_service |
+| information_schema   |
+| mysql                |
+| payroll_service      |
+| performance_schema   |
+| sys                  |
++----------------------+
+6 rows in set (0.30 sec)
+
+mysql> use address_book_service;			# It is use to change the database.
+Database changed
+mysql> SELECT DATABASE();				# It is use to select the paticular database.
++----------------------+
+| DATABASE()           |
++----------------------+
+| address_book_service |
++----------------------+
+1 row in set (0.00 sec)
+ 
