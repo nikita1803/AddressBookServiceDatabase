@@ -28,3 +28,36 @@ mysql> SELECT DATABASE();				# It is use to select the paticular database.
 +----------------------+
 1 row in set (0.00 sec)
  
+UC2 // Insert the attribute in the table.
+
+mysql> CREATE TABLE address_book			# It is use to create the table with the attributes.
+    -> (
+    -> id       INT unsigned NOT NULL AUTO_INCREMENT,
+    -> first_name       VARCHAR (50) NOT NULL,
+    -> last_name        VARCHAR (50),
+    -> address          VARCHAR (100) NOT NULL,
+    -> city             VARCHAR (50) NOT NULL,
+    -> state            VARCHAR (50) NOT NULL,
+    -> zip              INT (6) NOT NULL,
+    -> phone_number     INT (10) NOT NULL,
+    -> email            VARCHAR (50) NOT NULL,
+    -> PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected, 2 warnings (2.22 sec)
+
+mysql> DESCRIBE address_book;				# It is useto show the table with the attribute.
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int unsigned | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(50)  | NO   |     | NULL    |                |
+| last_name    | varchar(50)  | YES  |     | NULL    |                |
+| address      | varchar(100) | NO   |     | NULL    |                |
+| city         | varchar(50)  | NO   |     | NULL    |                |
+| state        | varchar(50)  | NO   |     | NULL    |                |
+| zip          | int          | NO   |     | NULL    |                |
+| phone_number | int          | NO   |     | NULL    |                |
+| email        | varchar(50)  | NO   |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+9 rows in set (0.43 sec)
+ 
