@@ -178,6 +178,24 @@ mysql> SELECT city, COUNT(first_name) FROM address_book GROUP BY city;			#To cou
 +-----------+-------------------+
 2 rows in set (0.00 sec)
 
+UC8 // Retrive data in ascending order
+
+mysql> SELECT * FROM address_book WHERE city="Lucknow"  ORDER BY first_name ASC;	#To retive data in ascending order
+
++----+------------+-----------+-------------+---------+-------+--------+--------
+------+------------------------+
+| id | first_name | last_name | address     | city    | state | zip    | phone_n
+umber | email                  |
++----+------------+-----------+-------------+---------+-------+--------+--------
+------+------------------------+
+|  4 | Nandan     | Kashyap   | Indra nagar | Lucknow | UP    | 226022 |    9876
+54329 | nandan34@gmail.com     |
+|  1 | Nikita     | Rai       | Indra nagar | Lucknow | UP    | 226021 |    8967
+54239 | rainikita595@gmail.com |
++----+------------+-----------+-------------+---------+-------+--------+--------
+------+------------------------+
+2 rows in set (0.00 sec)
+
 
 
  
