@@ -120,5 +120,28 @@ _number | email                  |
 --------+------------------------+
 4 rows in set (0.31 sec)
 
+UC5 // Delete the entry of the person 
+
+mysql> DELETE from address_book WHERE first_name = 'Nikki';				# Deleted the data where name is nikki 
+Query OK, 1 row affected (0.09 sec)
+
+mysql> SELECT * FROM address_book;							# Retrive the data from the table .
++----+------------+-----------+-------------+-----------+-------+--------+------
+--------+------------------------+
+| id | first_name | last_name | address     | city      | state | zip    | phone
+_number | email                  |
++----+------------+-----------+-------------+-----------+-------+--------+------
+--------+------------------------+
+|  1 | Nikita     | Rai       | Indra nagar | Lucknow   | UP    | 226021 |    89
+6754239 | rainikita595@gmail.com |
+|  3 | Malvika    | Sharma    | Ansal       | Gorakhpur | UP    | 123456 |    92
+3456789 | malvika12@gmail.com    |
+|  4 | Nandan     | Kashyap   | Indra nagar | Lucknow   | UP    | 226022 |    98
+7654329 | nandan34@gmail.com     |
++----+------------+-----------+-------------+-----------+-------+--------+------
+--------+------------------------+
+3 rows in set (0.02 sec)
+
+
 
  
