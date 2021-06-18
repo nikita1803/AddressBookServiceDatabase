@@ -280,6 +280,24 @@ mysql> SELECT first_name,type,COUNT(type) FROM address_book GROUP BY first_name;
 +------------+------------+-------------+
 3 rows in set (0.00 sec)
 
+UC11 // Add person in both family and friend
+
+mysql> INSERT INTO address_book (first_name,last_name,address,city,state,zip,phone_number,email,type) VALUES ("bhoomi" ,"kush","d-block","lucknow","UP",226062,123456,"bsdb@gsn
+s.com","family");										# Inserted the person of type damily and friend.
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from address_book;
++----+------------+-----------+-------------+-----------+-------+--------+--------------+------------------------+------------+
+| id | first_name | last_name | address     | city      | state | zip    | phone_number | email                  | type       |
++----+------------+-----------+-------------+-----------+-------+--------+--------------+------------------------+------------+
+|  1 | Nikita     | Rai       | Indra nagar | Lucknow   | UP    | 226021 |    896754239 | rainikita595@gmail.com | family     |
+|  3 | Malvika    | Sharma    | Ansal       | Gorakhpur | UP    | 123456 |    923456789 | malvika12@gmail.com    | friend     |
+|  4 | Nandan     | Kashyap   | Indra nagar | Lucknow   | UP    | 226022 |    987654329 | nandan34@gmail.com     | profession |
+|  5 | Shiv       | kumar     | d-block     | lucknow   | UP    | 226062 |       123456 | bsdb@gsns.com          | friend     |
+|  6 | bhoomi     | kush      | d-block     | lucknow   | UP    | 226062 |       123456 | bsdb@gsns.com          | family     |
++----+------------+-----------+-------------+-----------+-------+--------+--------------+------------------------+------------+
+5 rows in set (0.00 sec)
+
 
 
  
