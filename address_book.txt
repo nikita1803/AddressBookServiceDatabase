@@ -298,6 +298,50 @@ mysql> select * from address_book;
 +----+------------+-----------+-------------+-----------+-------+--------+--------------+------------------------+------------+
 5 rows in set (0.00 sec)
 
+UC13 // Implimentation of E-R diagram.
 
+mysql> CREATE TABLE person				#Created a table of name person
+    -> (
+    -> person_id        INT unsigned NOT NULL ,
+    -> person_name      VARCHAR(50) NOT NULL,
+    -> FOREIGN KEY (person_id) REFERENCES address_book(id));
+Query OK, 0 rows affected (1.16 sec)
+mysql> INSERT INTO person VALUES			# Inserted the value into the person
+    -> (1,'Nikita'),
+    -> (4,'Nandan'),
+    -> (6,'bhoomi');
+Query OK, 3 rows affected (0.16 sec)
+Records: 3  Duplicates: 0  Warnings: 0
 
- 
+mysql> SELECT * FROM person;
++-----------+-------------+
+| person_id | person_name |
++-----------+-------------+
+|         1 | Nikita      |
+|         4 | Nandan      |
+|         6 | bhoomi      |
++-----------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE TABLE address_book_details		# Created a table of adress bood detail
+    -> (
+    -> address_book_id          INT NOT NULL,
+    -> person_id                INT unsigned NOT NULL,
+    -> FOREIGN KEY (person_id) REFERENCES address_book(id)); 	#foreign key is use to link address book
+Query OK, 0 rows affected (1.52 sec)
+mysql> INSERT INTO address_book_details VALUES		# Inserted the value 
+    -> (101,1),
+    -> (101,4),
+    -> (102,6);
+Query OK, 3 rows affected (0.21 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM address_book_details;		# display the table
++-----------------+-----------+
+| address_book_id | person_id |
++-----------------+-----------+
+|             101 |         1 |
+|             101 |         4 |
+|             102 |         6 |
++-----------------+-----------+
+3 rows in set (0.29 sec)
